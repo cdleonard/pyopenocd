@@ -45,6 +45,8 @@ class OpenOcdTclRpc:
         while True:
             chunk = self.sock.recv(self.BUFFER_SIZE)
             data += chunk
-            index = chunk.find(self.SEPARATOR_BYTES)
+            index = data.find(self.SEPARATOR_BYTES)
             if index >= 0:
-                return data[:index + 1]
+                if index != len(data) - 1:
+                    raise Exception('Unhandled extra bytes after %r'.format(self.SEPARATOR_BYTES))
+                return data[:-1]
