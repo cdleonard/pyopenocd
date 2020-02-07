@@ -17,8 +17,8 @@ def create_parser():
 
     return parser
 
-def main():
-    opts = create_parser().parse_args()
+def main(argv=None):
+    opts = create_parser().parse_args(argv)
 
     import logging
     logging.basicConfig(
