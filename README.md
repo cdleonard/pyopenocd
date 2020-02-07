@@ -23,7 +23,7 @@ The openocd module is executable and can serve as a very simple openocd remote:
 
 ## Testing
 
-pytest is used for testing. Most useful tests require openocd to be running but
+pytest and tox are used for testing. Most useful tests require openocd to be running but
 they are skipped by default unless --openocd-running is passed on cmdline:
 
-    pytest --test-openocd-tclrpc
+    tox -- --openocd-running
