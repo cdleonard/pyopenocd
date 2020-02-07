@@ -4,18 +4,19 @@ This is a simple module for interfacing with openocd via TCL api.
 
 ## Installation
 
-pip install git+http://github.com/cdleonard/pyopenocd
+    pip install git+https://github.com/cdleonard/pyopenocd
 
 ## Usage
 
->>> from openocd import OpenOcdTclRpc
->>> with OpenOcdTclRpc() as openocd:
-...     print(openocd).sendmsg('expr 1 + 2')
-... 4
+    >>> from openocd import OpenOcdTclRpc
+    >>> with OpenOcdTclRpc() as openocd:
+    ...     print(openocd.sendrecv('expr 1 + 1'))
+    ...
+    2
 
 ## Command line
 
-The openocd module is executable:
+The openocd module is executable and can serve as a very simple openocd remote:
 
     $ python3 -m openocd expr 1 + 2
     3
