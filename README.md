@@ -16,10 +16,13 @@ This is a simple module for interfacing with openocd via TCL api.
 
 ## Command line
 
-The openocd module is executable and can serve as a very simple openocd remote:
+The openocd module is executable and can serve as a simple openocd remote from
+shell scripts:
 
-    $ python3 -m openocd run expr 1 + 2
+    $ openocd-remote run expr 1 + 2
     3
+    $ openocd-remote run targets
+    ...
 
 ## Testing
 
