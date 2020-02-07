@@ -10,7 +10,7 @@ This is a simple module for interfacing with openocd via TCL api.
 
     >>> from openocd import OpenOcdTclRpc
     >>> with OpenOcdTclRpc() as openocd:
-    ...     print(openocd.sendrecv('expr 1 + 1'))
+    ...     print(openocd.run('expr 1 + 1'))
     ...
     2
 
@@ -18,7 +18,7 @@ This is a simple module for interfacing with openocd via TCL api.
 
 The openocd module is executable and can serve as a very simple openocd remote:
 
-    $ python3 -m openocd expr 1 + 2
+    $ python3 -m openocd run expr 1 + 2
     3
 
 ## Testing
