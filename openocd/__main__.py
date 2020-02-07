@@ -21,9 +21,9 @@ def main():
     from . import OpenOcdTclRpc
     rpc = OpenOcdTclRpc()
     if opts.host:
-        rpc.tclRpcIp = opts.host
+        rpc.host = opts.host
     if opts.port:
-        rpc.tclRpcPort = opts.port
+        rpc.port = opts.port
 
     with rpc:
         sys.stdout.write(rpc.sendrecv(' '.join(opts.cmd)) + '\n')
